@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A0FFFFFF /* PlanetaryPositions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetaryPositions.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FFFFFE /* PlanetaryPositions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetaryPositions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000000 /* PlanetaryPositionsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetaryPositionsApp.swift; sourceTree = "<group>"; };
 		A1000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1000004 /* PlanetPositionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetPositionsView.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		A0FFFFFF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0FFFFFF /* PlanetaryPositions.app */,
+				A0FFFFFE /* PlanetaryPositions.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 			);
 			name = PlanetaryPositions;
 			productName = PlanetaryPositions;
-			productReference = A0FFFFFF /* PlanetaryPositions.app */;
+			productReference = A0FFFFFE /* PlanetaryPositions.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
