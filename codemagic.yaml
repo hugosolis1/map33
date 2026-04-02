@@ -1,0 +1,38 @@
+workflows:
+  ios-build:
+    name: Build iOS Unsigned IPA
+    instance_type: mac_mini_m1
+    max_build_duration: 60
+    environment:
+      vars:
+        XCODE_WORKSPACE: "PlanetaryPositions.xcodeproj"
+        XCODE_SCHEME: "PlanetaryPositions"
+        BUNDLE_ID: "com.yourcompany.PlanetaryPositions"
+      xcode: 15.2
+      cocoapods: default
+    scripts:
+      - name: Set up code signing
+        script: |
+          # No code signing for unsigned build
+          echo "Building unsigned IPA..."
+      - name: Build unsigned IPA
+        script: |
+          xcodebuild -project PlanetaryPositions.xcodeproj \
+            -scheme PlanetaryPositions \
+            -destination 'generic/platform=iOS' \
+            -configuration Release \
+            clean build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            PROVISIONING_PROFILE_SPECIFIER="" \
+            ARCHIVE_PATH="build/PlanetaryPositions.xcarchive" \
+            archive
+          
+          # Create IPA from archive
+          xcodebuild -exportArchive \
+            -archivePath "build/PlanetaryPositions.xcarchive" \
+            -exportPath "build/PlanetaryPositions_unsigned" \
+            -exportOptionsPlist exportOptions.plist
+    artifacts:
+      - build/PlanetaryPositions_unsigned/*.ipa
